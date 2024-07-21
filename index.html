@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed with Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<!--Navbar-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid my-3">
+          <a class="navbar-brand" href="#">
+            <i class="fa-brands fa-instagram fa-lg"></i>
+            <strong>Instagram</strong>
+          </a>
+      <form class="d-flex me-2">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#postModal">Create a new post</button>
+          <div class="dropdown ms-2">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-gear"></i>
+            </a>
+            
+<!--Settings dropdown-->
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accessibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy & Data</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </nav>
+    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label"><strong>Caption:</strong></label>
+                        <textarea class="form-control" id="message-text" placeholder="Add the caption of your post here"></textarea>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-light"><i class="fa-solid fa-camera"></i></button>
+                <button type="button" class="btn btn-light"><i class="fa-solid fa-location-dot"></i></button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <!--Nav Pills-->
+    <div class="container d-flex justify-content-center mt-3">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <i class="fa-solid fa-table"></i>
+        </button>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+          <i class="fa-solid fa-square"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+    <!--Photo Grid-->
+    <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="container-fluid">
+        <div class="row row-cols-3" >
+          <div class="col-md-4 mb-2">
+            <img src="https://www.dickssportinggoods.com/protips/sports-and-activities/family-fun/top-10-pool-party-must-haves/_jcr_content/root/container/container_2/image.coreimg.jpeg/1667591152305/poolpartyessentials.jpeg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://miro.medium.com/v2/resize:fit:1200/1*ontca7lBwejFFThujEgQrA.jpeg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://www.gaithersburgmd.gov/home/showpublishedimage/3676/636975902007830000" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://www.emagine-entertainment.com/wp-content/uploads/2022/11/Arcade2-scaled.jpg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://i.pcmag.com/imagery/articles/07cSiE9clgzUqzO9XweslkE-7..v1690818484.jpg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Hiking_to_the_Ice_Lakes._San_Juan_National_Forest%2C_Colorado.jpg/1200px-Hiking_to_the_Ice_Lakes._San_Juan_National_Forest%2C_Colorado.jpg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://images.squarespace-cdn.com/content/v1/64e4da071aa4df6831dd8569/697c9e6a-36c1-480a-87be-b2dc026e3b00/p1244608.jpeg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/photography/discover/concert-photography/thumbnail.jpeg" class="img-fluid h-100 border">
+          </div>
+          <div class="col-md-4 mb-2">
+            <img src="https://wildearth.com/cdn/shop/articles/grey-pitbull.jpg?v=1709589119" class="img-fluid h-100 border">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Photo Cards-->
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="card" style="width: 40rem;">
+        <div class="card-title px-2 pt-2 d-flex justify-content-between">
+          <h5>Wonder whats in there...</h5>
+          <p>8/26</p>
+        </div>
+        <img src="https://images.pexels.com/photos/1172064/pexels-photo-1172064.jpeg?cs=srgb&dl=pexels-freestockpro-1172064.jpg&fm=jpg" class="card-img">
+        <div class="card-body">
+          <p><strong>305 likes</strong></p>
+          <p class="card-text">Came across this little place...I wonder, what could be inside?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="card" style="width: 40rem;">
+        <div class="card-title px-2 pt-2 d-flex justify-content-between">
+          <h5>A relaxing beach day</h5>
+          <p>8/27</p>
+        </div>
+        <img src="https://www.shutterstock.com/image-photo/maldives-islands-ocean-tropical-beach-600nw-1938868960.jpg" class="card-img">
+        <div class="card-body">
+          <p><strong>205 likes</strong></p>
+          <p class="card-text">Thought that I should go outside and drive to the beach for a change.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-5">
+      <div class="card" style="width: 40rem;">
+        <div class="card-title px-2 pt-2 d-flex justify-content-between">
+        <h5>Game Night with the family!</h5>
+        <p>8/29</p>
+      </div>
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*Lcvk7KeLaIdlaUk_9RB6bg.jpeg" class="card-img">
+        <div class="card-body">
+          <p><strong>118 likes</strong></p>
+          <p class="card-text">Nothing beats hanging out and gaming with the people you love.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  </body>
+</body>
+</html>
